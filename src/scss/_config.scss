@@ -12,6 +12,14 @@ $break-small:   480px;
 $break-medium:  620px;
 $break-large:   800px;
 
+// policy size
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 20px;
+$font-size-5: 34px;
+$font-size-6: 64px;
+$font-size-7: 72px;
 // A standard margin
 $spacer:        30px;
 
@@ -23,17 +31,115 @@ $_color: (
   body-background: white
 );
 
+// palette
+$primary-color-dark:   #1976D2;
+$primary-color:        #2196F3;
+$primary-color-light:  #BBDEFB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+// [SIZE] header, foooter & sections
+
+#wrap-main, header, #wrap-footer, #wrap-footer footer, section{
+  width:100%;
+  padding:0px;
+  margin: 0px;
+  max-width: none;
+}
+header{height:155px;}
+#welcome,#about,#portfolio,#skills,#contact{height:655px;}
+footer{height: 100px;}
+p{margin:0px;padding:0px;}
+
+// [CENTER]
+section{
+  position: relative;
+  .container{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0px
+  }
+}
+// [MENU CHANGE]
+.a-selected{
+  background-color: $primary-color-dark;
+}
+
+// typo
+
+@font-face {
+    font-family: Roboto_Medium;
+    src: url('fonts/RobotoTTF/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: Roboto_Regular;
+    src: url('fonts/RobotoTTF/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: Roboto_Italic;
+    src: url('fonts/RobotoTTF/Roboto-Italic.ttf');
+}
+
+h1 {
+  font-size: $font-size-6;
+  font-family: "Roboto_Medium";
+  color: $primary-color-text;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $font-size-5;
+  font-family: "Roboto_Regular";
+  color: $primary-text-color;
+  text-transform: uppercase;
+  text-align: center;
+}
+h3 {
+  font-size: $font-size-3;
+  font-family: "Roboto_Regular";
+  color: $primary-text-color;
+  text-transform: uppercase;
+}
+h4 {
+  font-size: $font-size-2;
+  font-family: "Roboto_Regular";
+  color: $primary-text-color;
+  text-transform: uppercase;
+}
+.subheading {
+  font-size: $font-size-4;
+  font-family: "Roboto_Italic";
+  color: $primary-text-color;
+}
+body {
+  font-size: $font-size-1;
+  font-family: "Roboto_Regular";
+  color: $primary-text-color;
+}
+
+section{
+  overflow: auto;
+  h2{
+    line-height: 2;
+  }
+  paper-card{
+    color:$primary-text-color;
+  }
+}
+
+
 // Metadata; use metadata() to access
 $_metadata: (
-  theme-name:               "Voidx"
-, theme-uri:                "https://github.com/synapticism/wordpress-gulp-starter-kit"
-, theme-author:             "Alexander Synaptic"
-, theme-author-uri:         "http://synapticism.com"
+  theme-name:               "Berelindis Material Theme"
+, theme-uri:                "https://github.com/romainbellande/berelindis-material"
+, theme-author:             "Romain Bellande"
+, theme-author-uri:         "http://berelindis.com"
 , theme-description:        "A minimally viable theme made with the WordPress/Gulp starter kit"
 , theme-version:            "0.2.0"
 , theme-license:            "GPLv3"
 , theme-license-uri:        "http://www.gnu.org/licenses/gpl.txt"
 , theme-tags:               (light, responsive-layout, right-sidebar, starter-theme, two-columns, translation-ready, white)
-, theme-text-domain:        "voidx"
-, theme-text-domain-path:   "/languages/"
 );

@@ -8,6 +8,7 @@
 
 // Configuration variables and settings
 @import "config";
+@import "polymer-config";
 
 // Library: mixins, functions, etc. specific to this theme
 @import "library";
@@ -39,3 +40,178 @@ Domain Path: #{metadata(theme-text-domain-path)}
 @import "menus";
 @import "navigation";
 @import "sidebar";
+@import "portfolio-carousel";
+@import "animate";
+
+header{
+  z-index: 1;
+  position: fixed;
+  background-color:$primary-color;
+  .site-branding{
+    text-align: center;
+    top: 20px;
+    position: relative;
+  }
+  .site-title a{
+    font-size:$font-size-5;
+    font-family: "Roboto_Medium";
+    color: $primary-color-text;
+    text-transform: uppercase;
+  }
+  nav{
+    top: 30px;
+    position: relative;
+    .menu-inline{
+      text-align: center;
+      li{
+        display:inline;
+        float:none;
+        margin: 0px;
+        a{
+          display:inline-block;
+          font-size: $font-size-2;
+          font-family: "Roboto_Regular";
+          color: $primary-color-text;
+          text-transform: uppercase;
+          padding: 15px;
+          &:hover{
+            color: $primary-color-light;
+          }
+          &.mPS2id-highlight{
+            background-color: $primary-color-dark;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+#welcome{
+  margin-top:155px;
+  background-image: url('images/bg1.jpg');
+  background-size: cover;
+  color: $primary-color-text;
+  text-align: center;
+  .container{
+    height: 500px;
+    top: 75px;
+    p{
+      //margin-bottom:30px;
+      margin: auto;
+    }
+    #author{
+      font-size: $font-size-6;
+      font-family: "Roboto_Regular";
+      color: $primary-color-text;
+      text-transform: uppercase;
+    }
+    #job{
+      font-size: $font-size-7;
+      font-family: "Roboto_Medium";
+      color: $primary-color-text;
+      text-transform: uppercase;
+    }
+    #quote{
+      #quote-quote{
+        font-size: $font-size-5;
+        font-family: "Roboto_Italic";
+        color: $primary-color-text;
+      }
+      #quote-author{
+        display: block;
+        font-size: $font-size-4;
+        font-family: "Roboto_Regular";
+        color: $primary-color-text;
+      }
+    }
+  }
+}
+
+#about{
+  paper-card{
+    margin: 0 auto;
+    width: 500px;
+    display: block;
+    overflow: auto;
+    .card-content{
+      width:335px;
+      display: inline-block;
+    }
+    .card-thumb{
+      float: right;
+      width: 100px;
+      margin: 15px;
+      img{
+        -webkit-clip-path: url('clip-path/profile.svg');
+        clip-path: url('clip-path/profile.svg#svgClip');
+        -webkit-mask: url('clip-path/profile.svg');
+        width:100px;
+        height: 100px;
+        display: block;
+      }
+    }
+  }
+}
+
+#portfolio{
+  background-color: $primary-color;
+  h2{
+    color: $primary-color-text;
+  }
+  .jcarousel{
+    paper-card{
+      .card-actions{
+        text-align: center;
+      }
+    }
+  }
+}
+
+#skills{
+  .container{
+    position: relative;
+    width:80%;
+    height: 60%;
+    margin: auto;
+    paper-card{
+      margin: 20px 0px;
+      width:300px;
+      height: 100px;
+      iron-icon{
+        width:48px;
+        height: 48px;
+      }
+      paper-progress{
+        display:inline-block;
+      }
+    }
+  }
+
+}
+#contact{
+  background-color: $primary-color;
+  h2{
+    color:$primary-color-text;
+  }
+  paper-card{
+    width:600px;
+    padding:20px;
+    margin:auto;
+    display: block;
+    #name{
+      paper-input{
+        width: 45%;
+        display: inline-block;
+      }
+    }
+    paper-button{
+      margin: auto;
+      display: block;
+    }
+  }
+}
+
+footer{
+  background-color: $primary-color-dark;
+}

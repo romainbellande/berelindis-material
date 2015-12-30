@@ -27,5 +27,13 @@
     "tests",
     ".sass-cache",
     "build"
-  ]
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.7",
+    "iron-form": "PolymerElements/iron-form#~1.0.13",
+    "fullpage.js": "~2.7.6",
+    "wow": "wowjs#~1.1.2",
+    "page-scroll-to-id": "~1.5.4"
+  }
 }

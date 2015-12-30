@@ -1,12 +1,12 @@
 // ==== CONFIGURATION ==== //
 
 // Project paths
-var project     = 'voidx'                 // The directory name for your theme; change this at the very least!
+var project     = 'berelindis-material'                 // The directory name for your theme; change this at the very least!
   , src         = './src/'                // The raw material of your theme: custom scripts, SCSS source files, PHP files, images, etc.; do not delete this folder!
   , build       = './build/'              // A temporary directory containing a development version of your theme; delete it anytime
   , dist        = './dist/'+project+'/'   // The distribution package that you'll be uploading to your server; delete it anytime
   , assets      = './assets/'             // A staging area for assets that require processing before landing in the source folder (example: icons before being added to a sprite sheet)
-  , bower       = './bower_components/'   // Bower packages
+  , bower       = './src/lib/'   // Bower packages
   , composer    = './vendor/'             // Composer packages
   , modules     = './node_modules/'       // npm packages
 ;
@@ -53,7 +53,14 @@ module.exports = {
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
       core: [
-        src+'js/responsive-menu.js'
+        bower+'webcomponentsjs/webcomponents.min.js'
+      , src+'js/jquery.pagescroll2id.min.js'
+      , src+'js/wow.min.js'
+      , src+'js/jcarousel.js'
+      , src+'js/jquery.scrollomatic.js'
+      , src+'js/responsive-menu.js'
+      , src+'js/portfolio-carousel.js'
+      , src+'js/animations.js'
       , src+'js/core.js'
       ]
       // The pageloader chunk provides an example of how you would add a user-configurable feature to your theme; you can delete this if you wish
@@ -105,6 +112,18 @@ module.exports = {
     }
   },
 
+  fonts: {
+    build: {
+      src: src+'fonts/**/*'
+    , dest: build+'fonts/'
+  },
+    dist: {
+      src: build+'fonts/**/*'
+    , dest: dist+'fonts/'
+    }
+
+  },
+
   theme: {
     lang: {
       src: src+'languages/**/*' // Glob pattern matching any language files you'd like to copy over; we've broken this out in case you want to automate language-related functions
@@ -136,6 +155,7 @@ module.exports = {
     , scripts:      src+'js/**/*.js' // You might also want to watch certain dependency trees but that's up to you
     , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
     , theme:        src+'**/*.php'
+    , fonts:        src+'fonts/**/*'
     , livereload:   build+'**/*'
     }
   , watcher: 'livereload' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')

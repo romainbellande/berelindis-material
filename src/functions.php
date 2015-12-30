@@ -31,7 +31,6 @@ function voidx_setup() {
   if ( !isset( $content_width ) || !is_int( $content_width ) )
     $content_width = (int) 960;
 
-  // Register header and footer menus
   register_nav_menu( 'header', __( 'Header menu', 'voidx' ) );
   register_nav_menu( 'footer', __( 'Footer menu', 'voidx' ) );
 
